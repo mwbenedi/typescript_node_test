@@ -1,0 +1,23 @@
+{
+  "name": "typescript_node_test",
+  "version": "1.0.0",
+  "description": "Basic node typescript test server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mwbenedi/typescript_node_test.git"
+  },
+  "dependencies": {
+    "express": "4.x.x",
+    "typescript": "3.x.x"
+  },
+  "author": "mwbenedi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mwbenedi/typescript_node_test/issues"
+  },
+  "homepage": "https://github.com/mwbenedi/typescript_node_test#readme"
+}
