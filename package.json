@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "express": "4.x.x",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.2.0",
     "typescript": "3.x.x"
   },
   "author": "mwbenedi",
