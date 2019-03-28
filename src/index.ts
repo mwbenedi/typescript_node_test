@@ -1,11 +1,28 @@
-import app from './App'
+import "reflect-metadata";
+import { ApolloServer } from "apollo-server";
+import * as path from "path";
+import { buildSchema } from "type-graphql";
 
-const port = 4000
+import { RecipeResolver } from "./resolvers/recipe-resolver";
 
-app.listen(port, (err) => {
-  if (err) {
-    return console.log(err)
-  }
+async function bootstrap() {
+  // build TypeGraphQL executable schema
+  const schema = await buildSchema({
+    resolvers: [RecipeResolver],
+    // automatically create `schema.gql` file with schema definition in current folder
+    emitSchemaFile: path.resolve(__dirname, "schema.gql"),
+  });
 
-  return console.log(`server is listening on ${port}`)
-})
+  // Create GraphQL server
+  const server = new ApolloServer({
+    schema,
+    // enable GraphQL Playground
+    playground: true,
+  });
+
+  // Start the server
+  const { url } = await server.listen(4000);
+  console.log(`Server is running, GraphQL Playground available at ${url}`);
+}
+
+bootstrap();
