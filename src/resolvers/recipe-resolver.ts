@@ -5,7 +5,6 @@ import {
   Arg,
   Root,
   Mutation,
-  Float,
   Int,
   ResolverInterface,
 } from "type-graphql";
